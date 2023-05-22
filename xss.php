@@ -10,3 +10,7 @@ if (empty($_POST['email']) || !preg_match("/^[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\
     } else {
         setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60);
     }
+
+// Cанитизация заключается путем приведения типов, выбрасыванием всех тегов или заменой спецсимволов
+$email = strip_tags($_POST['email']);
+$year = intval($_POST['year']);
